@@ -6,4 +6,4 @@ install:
    - brew install class-dump
 
 script:
-	class-dump
+   class-dump
