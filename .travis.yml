@@ -3,7 +3,9 @@ osx_image: xcode11.3
 
 
 script:
+	- tar -xzf ShadowTrackerExtra.tar.gz
    - curl -OL http://stevenygard.com/download/class-dump-3.5.tar.gz
    - tar -xzf class-dump-3.5.tar.gz
-   - cd class*
-   - ./class-dump
+   - cd class* && mv class-dump ..
+   - ./class-dump -H ShadowTrackerExtra -o ShadowTrackerExtra.d
+	- ls -la ShadowTrackerExtra.d
