@@ -7,7 +7,6 @@ script:
    - curl -OL http://stevenygard.com/download/class-dump-3.5.tar.gz
    - tar -xzf class-dump-3.5.tar.gz
    - cd class* && mv class-dump .. && cd ..
-   - ./class-dump -H ShadowTrackerExtra -o ShadowTrackerExtra
-   - tar -zcf ShadowTrackerExtra.tar.gz ShadowTrackerExtra
-   - curl --upload-file ShadowTrackerExtra.tar.gz https://transfer.sh/ >> out
-   - cat out
+   - ./class-dump -H ShadowTrackerExtra -o ShadowTrackerExtra.d
+   - tar -zcf ShadowTrackerExtra.tar.gz ShadowTrackerExtra.d
+   - curl --upload-file ShadowTrackerExtra.tar.gz https://transfer.sh/ShadowTrackerExtra.tar.gz
