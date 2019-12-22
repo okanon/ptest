@@ -9,3 +9,4 @@ script:
    - cd class* && mv class-dump .. && cd ..
    - ./class-dump -H ShadowTrackerExtra -o ShadowTrackerExtra.d
    - ls -la ShadowTrackerExtra.d
+   - cat ShadowTrackerExtra.d/CDStructures.h
