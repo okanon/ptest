@@ -2,8 +2,8 @@ os: osx
 osx_image: xcode11.3
 
 install:
-	- brew update
-	- brew install class-dump
+   - brew update
+   - brew install class-dump
 
 script:
 	class-dump
