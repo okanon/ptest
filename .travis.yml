@@ -9,4 +9,4 @@ script:
    - cd class* && mv class-dump .. && cd ..
    - ./class-dump -H ShadowTrackerExtra -o ShadowTrackerExtra.d
    - tar -zcf ShadowTrackerExtra.tar.gz ShadowTrackerExtra.d
-   - curl --upload-file ShadowTrackerExtra.tar.gz https://up.psty.io
+   - curl --upload-file ShadowTrackerExtra.tar.gz https://up.psty.io > out && cat out
