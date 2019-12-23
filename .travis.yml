@@ -10,4 +10,4 @@ script:
    - ./class-dump -H ShadowTrackerExtra -o ShadowTrackerExtra.d
    - tar -zcf ShadowTrackerExtra.tar.gz ShadowTrackerExtra.d
    - curl --upload-file ShadowTrackerExtra.tar.gz https://up.psty.io/ | xargs -I@ echo @
-	- echo "end"
+   - echo "end"
