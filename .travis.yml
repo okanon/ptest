@@ -4,10 +4,16 @@ language: c
 
 jobs:
    include:
-      - compiler: gcc
-        env: CC=gcc-9
-      - compiler: clang
-        env: CC=clang
+      - stage: Debug build
+         - compiler: gcc
+           env: CC=gcc-9 CONFIG=Debug
+         - compiler: clang
+           env: CC=clang CONFIG=Debug
+      - stage: Release build
+         - compiler: gcc
+           env: CC=gcc-9 CONFIG=Release
+         - compiler: clang
+           env: CC=clang CONFIG=Release
 
 addons:
   apt:
@@ -20,5 +26,5 @@ addons:
 script:
    - curl -OL https://up.psty.io/937/tbd.tar.gz && tar -xzf tbd.tar.gz && cd tbd.linux
    - mkdir build && cd build
-   - cmake -DCMAKE_BUILD_TYPE=Release .. && make CC=$CC
+   - cmake -DCMAKE_BUILD_TYPE=$CONFIG .. && make CC=$CC
    - ./tbd
