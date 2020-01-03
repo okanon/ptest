@@ -2,14 +2,12 @@ os: linux
 dist: bionic
 language: c
 
-env:
-   - CC=gcc-9
-   - CC=clang
-
 jobs:
    include:
       - stage: Debug build
-        env: CONFIG=Release
+        env:
+           - CC=gcc
+           - CC=clang
       - stage: Release build
         env: CONFIG=Release
 
