@@ -6,10 +6,13 @@ jobs:
    include:
       - stage: Debug build
         env: CC=gcc-9 CONFIG=Debug
+        env: CC=X
       - stage: Debug build
         env: CC=clang CONFIG=Debug
       - stage: Release build
-        env: CONFIG=Release
+        env: CC=gcc-9 CONFIG=Release
+      - stage: Release build
+        env: CC=clang CONFIG=Release
 
 addons:
   apt:
