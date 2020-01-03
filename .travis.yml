@@ -1,20 +1,19 @@
+os: linux
 dist: bionic
 language: c
 
-matrix:
+jobs:
    include:
-      - os: linux
-        compiler: gcc
+      - compiler: gcc
         env: CC=gcc-9
-      - os: linux
-        compiler: clang
+      - compiler: clang
         env: CC=clang
 
 addons:
   apt:
      sources:
         - sourceline: 'ppa:ubuntu-toolchain-r/test'
-     package:
+     packages:
         - gcc-9
         - cmake
 
