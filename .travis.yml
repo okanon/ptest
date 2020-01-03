@@ -10,7 +10,9 @@ env:
 jobs:
    include:
       - stage: Debug build
-        env: CONFIG=Debug
+         - env: 
+            - C=a
+            - B=a
       - stage: Release build
         env: CONFIG=Release
 
