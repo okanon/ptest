@@ -5,8 +5,9 @@ language: c
 jobs:
    include:
       - stage: Debug build
-        - env: CC=gcc
-        - env: CC=clang
+        env: CC=gcc-9 CONFIG=Debug
+      - stage: Debug build
+        env: CC=clang CONFIG=Debug
       - stage: Release build
         env: CONFIG=Release
 
