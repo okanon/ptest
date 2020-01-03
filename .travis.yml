@@ -11,5 +11,6 @@ matrix:
 
 
 script:
-   - git clone https://github.com/okanon/tbd.linux && tbd.linux
+   - git clone https://github.com/okanon/tbd.linux && cd tbd.linux
    - make 
+   - ls -la 
