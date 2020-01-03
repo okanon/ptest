@@ -13,7 +13,7 @@ matrix:
 addons:
   apt:
      sources:
-        - ubuntu-toolchain-r-test
+        - ppa:ubuntu-toolchain-r/test
      package:
         - gcc-9
         - cmake
