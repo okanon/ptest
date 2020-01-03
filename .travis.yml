@@ -1,11 +1,5 @@
 dist: bionic
 
-jobs:
-   include:
-      - stage: gcc
-         compiler: gcc
-      - stage: clang
-         compiler: clang
 script:
    - gcc --version
    - clang --version
