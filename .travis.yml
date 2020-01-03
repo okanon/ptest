@@ -1,5 +1,5 @@
 dist: bionic
-language: cpp
+language: c
 
 matrix:
    include:
@@ -14,4 +14,4 @@ matrix:
 script:
    - git clone https://github.com/okanon/tbd.linux && cd tbd.linux
    - make 
-   - ls -la 
+   - cd bin && ./tbd
