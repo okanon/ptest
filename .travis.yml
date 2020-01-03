@@ -5,13 +5,16 @@ language: c
 jobs:
    include:
       - stage: Debug build
+        compiler: gcc
         env: CC=gcc-9 CONFIG=Debug
-        env: CC=X
       - stage: Debug build
+        compiler: clang
         env: CC=clang CONFIG=Debug
       - stage: Release build
+        compiler: gcc
         env: CC=gcc-9 CONFIG=Release
       - stage: Release build
+        compiler: clang
         env: CC=clang CONFIG=Release
 
 addons:
