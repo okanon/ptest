@@ -1,16 +1,15 @@
 dist: bionic
-language: c
-compiler:
-   - gcc
-   - clang
 
-jobs:
+matrix:
    include:
-      - stage: gcc
-        script:
-           - git clone https://github.com/okanon/tbd.linux
-           - make C=gcc
-      - stage: clang
-        script:
-           - git clone https://github.com/okanon/tbd.linux
-           - make C=clang
+      - os: linux
+        compiler: gcc
+        env: C=gcc
+      - os: linux
+        compiler: clang
+        env: C=clsng
+
+
+script:
+   - git clone https://github.com/okanon/tbd.linux && tbd.linux
+   - make 
