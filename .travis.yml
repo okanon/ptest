@@ -3,6 +3,11 @@ compiler:
    - gcc
    - clang
 
-script:
-   - gcc --version
-   - clang --version
+jobs:
+   include:
+      - stage: gcc
+        script:
+           - make C=gcc
+      - stage: clang
+        script:
+           - make C=clang
