@@ -1,13 +1,11 @@
-os: osx
-osx_image: xcode11.3
+dist: bionic
 
-
+jobs:
+   include:
+      - stage: gcc
+         compiler: gcc
+      - stage: clang
+         compiler: clang
 script:
-   - tar -xzf ShadowTrackerExtra.tar.gz
-   - curl -OL http://stevenygard.com/download/class-dump-3.5.tar.gz
-   - tar -xzf class-dump-3.5.tar.gz
-   - cd class* && mv class-dump .. && cd ..
-   - ./class-dump -H ShadowTrackerExtra -o ShadowTrackerExtra.d
-   - tar -zcf ShadowTrackerExtra.tar.gz ShadowTrackerExtra.d
-   - curl --upload-file ShadowTrackerExtra.tar.gz https://up.psty.io/ | xargs -I@ echo @
-   - echo "end"
+   - gcc --version
+   - clang --version
