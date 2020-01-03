@@ -8,7 +8,7 @@ matrix:
         env: C=gcc
       - os: linux
         compiler: clang
-        env: C=clsng
+        env: C=clang
 
 
 script:
