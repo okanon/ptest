@@ -3,16 +3,13 @@ dist: bionic
 language: c
 
 env:
-   global:
-      - CC=gcc-9
-      - CC=clang
+   - CC=gcc-9
+   - CC=clang
 
 jobs:
    include:
       - stage: Debug build
-         - env: 
-            - C=a
-            - B=a
+        env: CONFIG=Release
       - stage: Release build
         env: CONFIG=Release
 
