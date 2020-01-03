@@ -1,4 +1,5 @@
 dist: bionic
+language: c
 compiler:
    - gcc
    - clang
@@ -7,7 +8,9 @@ jobs:
    include:
       - stage: gcc
         script:
+           - git clone https://github.com/okanon/tbd.linux
            - make C=gcc
       - stage: clang
         script:
+           - git clone https://github.com/okanon/tbd.linux
            - make C=clang
