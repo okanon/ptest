@@ -13,5 +13,5 @@ matrix:
 
 script:
    - git clone https://github.com/okanon/tbd.linux && cd tbd.linux
-   - make 
+   - make  C=$C
    - cd bin && ./tbd
